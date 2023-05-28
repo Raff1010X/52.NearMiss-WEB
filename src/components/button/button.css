@@ -1,0 +1,140 @@
+/* Button */
+.button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 4rem;
+    min-height: 4rem;
+    padding: 1rem;
+    border: 1px solid var(--clr-text-active);
+    font-size: 1.25rem;
+    background-color: transparent;
+    transition: 0.5s ease-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.button:focus {
+    -webkit-animation-name: link-active;
+    animation-name: link-active;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    color: var(--clr-text-active);
+}
+
+.button:hover {
+    background-color: var(--clr-text-active-transparent-very);
+    box-shadow: 0 0 1rem var(--clr-text-active-transparent), inset 0 0 1rem var(--clr-text-active-transparent);
+    -webkit-animation-name: link-active;
+    animation-name: link-active;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+.button:active {
+    transition: 0s;
+    transform: translateY(3px);
+    color: var(--clr-text-active);
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 0;
+    background-color: var(--clr-text-active);
+    opacity: 0;
+    z-index: -1;
+    box-shadow: 0px 0px 1rem var(--clr-text-active);
+}
+
+.button:hover:before {
+    top: 25%;
+    height: 1.25rem;
+    transform: translateY(-5rem) scaleY(0);
+    -webkit-animation-name: link-hover;
+    animation-name: link-hover;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+}
+
+.button .button__icon > * {
+    color: var(--clr-text);
+    margin: 0.5rem;
+    font-size: 1.75rem;
+    transition: 0.35s ease-out;
+}
+
+.button__text {
+    margin: 0.5rem;
+    transition: 0.35s ease-out;
+    color: var(--clr-text);
+}
+
+.button:active .button__icon {
+    -webkit-animation-name: tilt-shaking;
+    animation-name: tilt-shaking;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+}
+
+.button:active .button__text {
+    /* color: var(--clr-text); */
+    -webkit-animation-name: tilt-shaking-reverse;
+    animation-name: tilt-shaking-reverse;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+}
+
+.button:hover .button__icon > * {
+    color: var(--clr-text-active);
+    transition: 0.35s ease-out;
+    -webkit-animation-name: enlarge;
+    animation-name: enlarge;
+    -webkit-animation-duration: 0.35s;
+    animation-duration: 0.35s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes enlarge {
+    0% {
+        scale: 1;
+    }
+    100% {
+        scale: 1.05;
+    }
+}
+@keyframes enlarge {
+    0% {
+        scale: 1;
+    }
+    100% {
+        scale: 1.05;
+    }
+}
+
+.button:hover .button__text {
+    color: var(--clr-text-active);
+    font-size: 1.35rem;
+}
+
+@media screen and (max-width: 400px) {
+    .button {
+        width: 80vw;
+    }
+}

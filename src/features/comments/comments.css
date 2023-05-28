@@ -1,0 +1,193 @@
+.comments {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: slide-up;
+    animation-name: slide-up;
+    -webkit-animation-duration: 1.25s;
+    animation-duration: 1.25s;
+    cursor: default;
+    max-width: 1350px;
+}
+
+.comments__container {
+    width: 100%;
+}
+
+.comment__container,
+.comment__container--selected {
+    width: 100%;
+    min-height: 5rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--clr-text-active-transparent);
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.comment__container--selected {
+    background-color: var(--clr-text-active-transparent-very);
+}
+
+.comment__container:hover {
+    background-color: var(--clr-text-active-transparent-very);
+}
+
+.comment__text {
+    font-size: larger;
+}
+.comment__text-autor {
+    color: var(--clr-text-active);
+}
+
+#comments__head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 8.5rem;
+    border-bottom: 1px solid var(--clr-text-active-transparent);
+    background-color: var(--bg);
+}
+
+#comments__no-content {
+    height: 60vh;
+    z-index: -1;
+}
+
+#comments__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--clr-text-active);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    color: var(--bg);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 0 0 1rem var(--bg);
+}
+#comments__menu > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.75rem;
+    width: 2rem;
+}
+
+.comments__menu--hidden {
+    height: 0;
+    width: 0;
+    margin: -100px;
+    padding: 0;
+    opacity: 0;
+}
+.comments__menu--visible {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0px;
+    opacity: 1;
+    -webkit-animation-name: slide-left;
+    animation-name: slide-left;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+}
+
+#comments__add-edit {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--bg);
+    transition: all 0.75s;
+}
+
+.comments__add-edit--hidden {
+    opacity: 0;
+    left: 150vw;
+}
+
+.comments__add-edit--visible {
+    left: 0;
+    opacity: 1;
+}
+
+#comment__text {
+    width: 80%;
+    min-height: 10rem;
+}
+
+.comments__input {
+    width: 85%;
+}
+
+.comments__head {
+    font-size: 2rem;
+}
+
+#comments__input {
+    width: 100%;
+    height: 30vh;
+}
+.comments__buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+}
+
+@media screen and (max-width: 590px) {
+    .comments__add-edit--visible,
+    .comments__add-edit--hidden {
+        height: calc(100vh - var(--nav-height));
+    }
+    .comments__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+@media screen and (min-width: 590px) {
+    .comments__add-edit--visible,
+    .comments__add-edit--hidden {
+        height: calc(100vh - 2 * var(--nav-height));
+    }
+}
+@media screen and (min-width: 1081px) {
+    .comments__add-edit--visible,
+    .comments__add-edit--hidden {
+        height: calc(100vh - var(--nav-height));
+    }
+    .comments__input {
+        width: 60%;
+    }
+}

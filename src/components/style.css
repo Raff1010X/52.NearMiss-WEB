@@ -1,0 +1,104 @@
+/* _________________________________________________COMPONENTS */
+/* _________________________________________________label */
+label {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    font-size: 1rem;
+}
+/* _________________________________________________COMPONENTS */
+/* _________________________________________________input, select, option */
+input,
+select {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
+    border: 1px solid var(--clr-text-active);
+    background-color: var(--bg);
+    color: var(--clr-text);
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+option {
+    color: var(--clr-text-active);
+}
+
+input::-webkit-input-placeholder {
+    color: var(--clr-text-active);
+}
+
+input::-moz-placeholder {
+    color: var(--clr-text-active);
+}
+
+input:-ms-input-placeholder {
+    color: var(--clr-text-active);
+}
+
+input::-ms-input-placeholder {
+    color: var(--clr-text-active);
+}
+
+input::placeholder {
+    color: var(--clr-text-active);
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border: 1px solid var(--clr-text-active);
+}
+
+input:focus:invalid {
+    border: 1px dashed red;
+}
+
+/* input:not(:placeholder-shown) {
+    border: 2px dashed red;
+  } */
+
+input:valid {
+    border: 1px solid var(--clr-text-active);
+}
+
+input[type='number'] {
+    border: 0px solid transparent;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+input[type='number'] {
+    -moz-appearance: textfield !important;
+}
+/* _________________________________________________COMPONENTS */
+/* _________________________________________________custom background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    border: 1px solid var(--clr-text-active);
+    -webkit-text-fill-color: var(--clr-text);
+    box-shadow: 0 0 0 1000px var(--bg) inset;
+    -webkit-transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s;
+    /* transition: box-shadow .5s ease-out; */
+}
+/* _________________________________________________COMPONENTS */
+/* _________________________________________________Custom input icons */
+::-ms-reveal {
+    filter: invert(var(--invert));
+    margin: 0.6rem;
+}
+::-webkit-calendar-picker-indicator {
+    -webkit-filter: invert(var(--invert));
+    filter: invert(var(--invert));
+    margin: 0.6rem;
+    -webkit-transition: all 0.5s, width 0s;
+    transition: all 0.5s, width 0s;
+}

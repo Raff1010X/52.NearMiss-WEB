@@ -1,0 +1,129 @@
+.fullscreen-enabled {
+    background-color: var(--bg);
+}
+
+#App {
+    width: 100vw;
+    height: calc(100vh - var(--nav-height));
+    top: var(--nav-height);
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    cursor: -webkit-grab;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    scrollbar-width: none;
+}
+
+#App:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+#prev-icon,
+#next-icon {
+    display: none;
+    position: absolute;
+    color: var(--clr-text-active);
+    border-radius: 5rem;
+    padding: 0;
+    transform: translate(-50%, -200%);
+    z-index: 2000;
+}
+
+#next-icon {
+    -webkit-animation-name: next-icon;
+    animation-name: next-icon;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+#prev-icon {
+    -webkit-animation-name: prev-icon;
+    animation-name: prev-icon;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+#prev-icon > i > *,
+#next-icon > i > * {
+    font-size: 3rem;
+}
+
+@-webkit-keyframes prev-icon {
+    0% {
+        transform: scale(1.1) translate(-20%, -180%);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translate(-70%, -200%);
+        opacity: 0.2;
+    }
+}
+
+@keyframes prev-icon {
+    0% {
+        transform: scale(1.1) translate(-20%, -180%);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translate(-70%, -200%);
+        opacity: 0.2;
+    }
+}
+
+@-webkit-keyframes next-icon {
+    0% {
+        transform: scale(1) translate(-20%, -200%);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1.1) translate(-70%, -180%);
+        opacity: 1;
+    }
+}
+
+@keyframes next-icon {
+    0% {
+        transform: scale(1) translate(-20%, -200%);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1.1) translate(-70%, -180%);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    #App {
+        height: calc(100vh - var(--nav-height));
+    }
+}
+@media screen and (min-width: 590px) {
+    #App {
+        height: calc(100vh - 2 * var(--nav-height));
+    }
+}
+@media screen and (min-width: 1081px) {
+    #App {
+        height: calc(100vh - var(--nav-height));
+    }
+}
+
+#app-error {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}

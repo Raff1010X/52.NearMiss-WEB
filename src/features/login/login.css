@@ -1,0 +1,77 @@
+.login {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: slide-up;
+    animation-name: slide-up;
+    -webkit-animation-duration: 1.25s;
+    animation-duration: 1.25s;
+    cursor: default;
+}
+
+.login__form {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.login__fieldset {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: none;
+}
+
+.login__status {
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login__button {
+    width: 60%;
+    transition: width 0s;
+}
+
+@media screen and (max-width: 900px) {
+    .login__form {
+        width: 90%;
+    }
+    .login__fieldset {
+        width: 90%;
+    }
+    #login__button {
+        width: 90%;
+    }
+}
+
+.login__link {
+    color: var(--clr-text);
+    white-space: nowrap;
+    transition: color 0.5s ease-out;
+}
+
+.login__link :hover {
+    color: var(--clr-text-active);
+}
+
+.login__link :active {
+    color: var(--clr-text-active);
+}
+
+.login__link :visited {
+    color: var(--clr-text);
+}

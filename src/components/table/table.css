@@ -1,0 +1,216 @@
+.table {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    max-width: 1350px;
+    min-height: 555px;
+}
+
+.table--loading {
+    max-height: 70vh !important;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    max-width: 1350px;
+}
+
+thead tr {
+    height: 3rem;
+    background-color: var(--clr-text-active-transparent);
+    color: var(--clr-text);
+    font-size: 1.1rem !important;
+    cursor: pointer;
+}
+
+thead tr:hover {
+    color: var(--clr-text) !important;
+    background-color: var(--clr-text-active-transparent);
+}
+
+tr:hover {
+    background-color: var(--clr-text-active-transparent-very);
+    color: var(--clr-text-active);
+}
+
+tr {
+    font-size: 0.9rem !important;
+    height: 10%;
+    min-height: 7.1vh;
+    max-height: 9.75vh;
+    border-bottom: 1px solid var(--clr-text-active-transparent) !important;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.table__tr--empty {
+    border-bottom: 0 !important;
+    cursor: default;
+}
+.table__tr--empty:hover {
+    background-color: transparent;
+}
+
+td:nth-child(1),
+th:nth-child(1) {
+    width: 8.5%;
+}
+td:nth-child(2),
+th:nth-child(2) {
+    width: 12%;
+}
+td:nth-child(3),
+th:nth-child(3) {
+    width: 15%;
+}
+td:nth-child(4),
+th:nth-child(4) {
+    width: 47%;
+}
+td:nth-child(5),
+th:nth-child(5) {
+    width: 17.5%;
+}
+
+th:active {
+    color: var(--bg);
+    background-color: var(--clr-text-active);
+    transition: 0s;
+}
+
+td,
+th {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.table__tr--loading {
+    height: 100%;
+    min-height: calc(64vh - 3vh) !important;
+    font-size: 2rem !important;
+    border-bottom: 0 !important;
+}
+
+tfoot tr {
+    height: var(--nav-height);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    border: 0 !important;
+    width: 100%;
+    cursor: default;
+}
+
+tfoot tr:hover {
+    color: var(--clr-text);
+}
+
+.tfoot__td--input {
+    border: 0;
+    border-radius: 0 !important;
+    width: 8rem !important;
+}
+
+.tfoot__select {
+    text-align: center;
+    margin-bottom: 0 !important;
+    font-size: 1.1rem;
+    height: 2.5rem;
+}
+
+.tfoot__option {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 590px) {
+    .table {
+        height: calc(100vh - var(--nav-height));
+    }
+    td:nth-child(1),
+    th:nth-child(1) {
+        width: 16%;
+    }
+    td:nth-child(2),
+    th:nth-child(2) {
+        width: 0;
+        display: none;
+    }
+    td:nth-child(3),
+    th:nth-child(3) {
+        width: 27%;
+    }
+    td:nth-child(4),
+    th:nth-child(4) {
+        width: 57%;
+    }
+    td:nth-child(5),
+    th:nth-child(5) {
+        width: 0;
+        display: none;
+    }
+    tfoot tr td:nth-child(2) {
+        width: 4rem;
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1360px) {
+    td:nth-child(1),
+    th:nth-child(1) {
+        width: calc(1350px * (5 / 100));
+    }
+    td:nth-child(2),
+    th:nth-child(2) {
+        width: calc(1350px * (11 / 100));
+    }
+    td:nth-child(3),
+    th:nth-child(3) {
+        width: calc(1350px * (15 / 100));
+    }
+    td:nth-child(4),
+    th:nth-child(4) {
+        width: calc(1350px * (59 / 100));
+    }
+    td:nth-child(5),
+    th:nth-child(5) {
+        width: calc(1350px * (10 / 100));
+    }
+}
+
+@media screen and (min-width: 590px) {
+    .table {
+        height: calc(100vh - 2 * var(--nav-height));
+    }
+    tr {
+        /* firefox table height */
+        height: 10%;
+        min-height: 6vh;
+        max-height: 9.75vh;
+    }
+}
+@media screen and (min-width: 1081px) {
+    .table {
+        height: calc(100vh - var(--nav-height));
+    }
+    tr {
+        /* firefox table height */
+        height: 10%;
+        min-height: 7.1vh;
+        max-height: 9.75vh;
+    }
+}

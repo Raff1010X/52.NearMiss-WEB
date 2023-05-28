@@ -1,0 +1,17 @@
+/*  */
+.register {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    cursor: default;
+    max-width: 1350px;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: slide-up;
+    animation-name: slide-up;
+    -webkit-animation-duration: 1.25s;
+    animation-duration: 1.25s;
+}
