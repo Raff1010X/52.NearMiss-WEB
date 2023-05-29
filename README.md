@@ -12,39 +12,39 @@ My git repo: https://github.com/Raff1010X/01.Roadmap
 # Rejestr zagrożeń i niebezpiecznych zdarzeń na terenie firmy.
 # Założenia
 A. Strona główna:
-<br>− prezentacja idei zgłaszania zagrożeń i niebezpiecznych zdarzeń.
+<br>- prezentacja idei zgłaszania zagrożeń i niebezpiecznych zdarzeń.
 
 B. Strona logowania:
-− rejestracja użytkownika, 
-− logowanie do aplikacji, 
-− odzyskiwanie hasła przez użytkownika, 
-− logowanie z wykorzystaniem tokenów JWT i CRSF,
-− różne role/uprawnienia użytkowników.
+<br>- rejestracja użytkownika, 
+<br>- logowanie do aplikacji, 
+<br>- odzyskiwanie hasła przez użytkownika, 
+<br>- logowanie z wykorzystaniem tokenów JWT i CRSF,
+<br>- różne role/uprawnienia użytkowników.
 
 C. Strona formularza zgłoszenia:
-− zbieranie danych o zagrożeniu/zdarzeniu niebezpiecznym, 
-− przesłanie danych i plików graficznych na serwer.
+<br>- zbieranie danych o zagrożeniu/zdarzeniu niebezpiecznym, 
+<br>- przesłanie danych i plików graficznych na serwer.
 
 D. Strona rejestru zagrożeń:
-− wyszukiwarka zgłoszeń wg różnych kryteriów,
-− tabela zgłoszeń, 
-− sortowanie pól tabeli, 
-− zmiana zakresu prezentowanych danych,
-− przejście do strony zgłoszenia,
-− paginacja tabeli,
-− przejście do wybranej strony rejestru i wyników wyszukiwania.
+<br>- wyszukiwarka zgłoszeń wg różnych kryteriów,
+<br>- tabela zgłoszeń, 
+<br>- sortowanie pól tabeli, 
+<br>- zmiana zakresu prezentowanych danych,
+<br>- przejście do strony zgłoszenia,
+<br>- paginacja tabeli,
+<br>- przejście do wybranej strony rejestru i wyników wyszukiwania.
 
 E. Strona zgłoszenia:
-− prezentacja danych pojedynczego zgłoszenia, 
-− możliwość odnotowania w rejestrze, że wykonano działania zapobiegające zagrożeniu, 
-− możliwość przejścia do kolejnego/poprzedniego zgłoszenia w rejestrze i wynikach wyszukiwania.
+<br>- prezentacja danych pojedynczego zgłoszenia, 
+<br>- możliwość odnotowania w rejestrze, że wykonano działania zapobiegające zagrożeniu, 
+<br>- możliwość przejścia do kolejnego/poprzedniego zgłoszenia w rejestrze i wynikach wyszukiwania.
 
 F. Strona statystyk:
-− prezentacja graficzna statystyk zgłoszeń.
+<br>- prezentacja graficzna statystyk zgłoszeń.
 
 G. Strona użytkownika:
-− prezentacja danych użytkownika,
-− zmiana danych użytkownika.
+<br>- prezentacja danych użytkownika,
+<br>- zmiana danych użytkownika.
 
 # Technologie
 Frontend: JS, CSS, React, Redux, Redux-Thunk.
