@@ -8,6 +8,44 @@ To login use:
 
 My git repo: https://github.com/Raff1010X/01.Roadmap
 
+
+# Rejestr zagrożeń i niebezpiecznych zdarzeń na terenie firmy.
+# Założenia:
+A. Strona główna:
+− prezentacja idei zgłaszania zagrożeń i niebezpiecznych zdarzeń.
+B. Strona logowania:
+− rejestracja użytkownika, 
+− logowanie do aplikacji, 
+− odzyskiwanie hasła przez użytkownika, 
+− logowanie z wykorzystaniem tokenów JWT i CRSF,
+− różne role/uprawnienia użytkowników.
+C. Strona formularza zgłoszenia:
+− zbieranie danych o zagrożeniu/zdarzeniu niebezpiecznym, 
+− przesłanie danych i plików graficznych na serwer.
+D. Strona rejestru zagrożeń:
+− wyszukiwarka zgłoszeń wg różnych kryteriów,
+− tabela zgłoszeń, 
+− sortowanie pól tabeli, 
+− zmiana zakresu prezentowanych danych,
+− przejście do strony zgłoszenia,
+− paginacja tabeli - przejście do wybranej strony rejestru i wyników 
+wyszukiwania.
+E. Strona zgłoszenia:
+− prezentacja danych pojedynczego zgłoszenia, 
+− możliwość odnotowania w rejestrze, że wykonano działania 
+zapobiegające zagrożeniu, 
+− możliwość przejścia do kolejnego/poprzedniego zgłoszenia w rejestrze 
+i wynikach wyszukiwania.
+F. Strona statystyk:
+− prezentacja graficzna statystyk zgłoszeń.
+G. Strona użytkownika:
+− prezentacja danych użytkownika,
+− zmiana danych użytkownika.
+
+# Technologie
+Frontend: JS, CSS, React, Redux, Redux-Thunk.
+Backend: JS, Node, Express, PosgreSQL
+
 #
 ##
 <p align="center">
