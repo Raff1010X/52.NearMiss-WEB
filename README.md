@@ -10,7 +10,7 @@ My git repo: https://github.com/Raff1010X/01.Roadmap
 
 
 # Rejestr zagrożeń i niebezpiecznych zdarzeń na terenie firmy.
-# Założenia
+## Założenia
 A. Strona główna:
 <br>- prezentacja idei zgłaszania zagrożeń i niebezpiecznych zdarzeń.
 
@@ -46,11 +46,10 @@ G. Strona użytkownika:
 <br>- prezentacja danych użytkownika,
 <br>- zmiana danych użytkownika.
 
-# Technologie
+## Technologie
 Frontend: JS, CSS, React, Redux, Redux-Thunk.
 Backend: JS, Node, Express, PosgreSQL
 
-#
 ##
 <p align="center">
 <img src="./images/1.png" alt="example image" width="80%">
