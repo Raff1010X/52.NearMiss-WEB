@@ -31,15 +31,13 @@ D. Strona rejestru zagrożeń:
 − sortowanie pól tabeli, 
 − zmiana zakresu prezentowanych danych,
 − przejście do strony zgłoszenia,
-− paginacja tabeli - przejście do wybranej strony rejestru i wyników 
-wyszukiwania.
+− paginacja tabeli,
+− przejście do wybranej strony rejestru i wyników wyszukiwania.
 
 E. Strona zgłoszenia:
 − prezentacja danych pojedynczego zgłoszenia, 
-− możliwość odnotowania w rejestrze, że wykonano działania 
-zapobiegające zagrożeniu, 
-− możliwość przejścia do kolejnego/poprzedniego zgłoszenia w rejestrze 
-i wynikach wyszukiwania.
+− możliwość odnotowania w rejestrze, że wykonano działania zapobiegające zagrożeniu, 
+− możliwość przejścia do kolejnego/poprzedniego zgłoszenia w rejestrze i wynikach wyszukiwania.
 
 F. Strona statystyk:
 − prezentacja graficzna statystyk zgłoszeń.
