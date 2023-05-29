@@ -1,56 +1,107 @@
+# Near-Miss Reporting Web App
 
+Demo: https://zpw.webdev.priv.pl/
 
+To login use: 
+- email: rafal.anonim@acme.pl
+- password: test123456
 
+My git repo: https://github.com/Raff1010X/01.Roadmap
 
+#
+##
+<p align="center">
+<img src="./images/1.png" alt="example image" width="80%">
+</p>
 
+<p align="center">
+<img src="./images/2.png" alt="example image" width="80%">
+</p>
 
+<p align="center">
+<img src="./images/3.png" alt="example image" width="50%">
+</p>
 
+<p align="center">
+<img src="./images/4.png" alt="example image" width="50%">
+</p>
 
+<p align="center">
+<img src="./images/5.png" alt="example image" width="80%">
+</p>
 
+<p align="center">
+<img src="./images/6.png" alt="example image" width="80%">
+</p>
 
-# Getting Started with Create React App and Redux
+<p align="center">
+<img src="./images/7.png" alt="example image" width="30%">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+<p align="center">
+<img src="./images/8.png" alt="example image" width="50%">
+</p>
 
-## Available Scripts
+<p align="center">
+<img src="./images/9.png" alt="example image" width="50%">
+</p>
 
-In the project directory, you can run:
+<p align="center">
+<img src="./images/10.png" alt="example image" width="80%">
+</p>
 
-### `npm start`
+<p align="center">
+<img src="./images/11.png" alt="example image" width="80%">
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p align="center">
+<img src="./images/12.png" alt="example image" width="50%">
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center">
+<img src="./images/13.png" alt="example image" width="50%">
+</p>
 
-### `npm test`
+<p align="center">
+<img src="./images/14.png" alt="example image" width="50%">
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+<img src="./images/15.png" alt="example image" width="80%">
+</p>
 
-### `npm run build`
+<p align="center">
+<img src="./images/16.png" alt="example image" width="80%">
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+<img src="./images/17.png" alt="example image" width="80%">
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="center">
+<img src="./images/18.png" alt="example image" width="50%">
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="center">
+<img src="./images/19.png" alt="example image" width="80%">
+</p>
 
-### `npm run eject`
+<p align="center">
+<img src="./images/20.png" alt="example image" width="80%">
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align="center">
+<img src="./images/21.png" alt="example image" width="80%">
+</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="center">
+<img src="./images/22.png" alt="example image" width="80%">
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align="center">
+<img src="./images/23.png" alt="example image" width="30%">
+</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="center">
+<img src="./images/24.png" alt="example image" width="30%">
+</p>
