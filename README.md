@@ -12,7 +12,7 @@ My git repo: https://github.com/Raff1010X/01.Roadmap
 # Rejestr zagrożeń i niebezpiecznych zdarzeń na terenie firmy.
 # Założenia
 A. Strona główna:
-# − prezentacja idei zgłaszania zagrożeń i niebezpiecznych zdarzeń.
+<br>− prezentacja idei zgłaszania zagrożeń i niebezpiecznych zdarzeń.
 
 B. Strona logowania:
 − rejestracja użytkownika, 
