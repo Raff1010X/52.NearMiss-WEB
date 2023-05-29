@@ -8,8 +8,7 @@ To login use:
 
 My git repo: https://github.com/Raff1010X/01.Roadmap
 
-
-# Rejestr zagrożeń i niebezpiecznych zdarzeń na terenie firmy.
+# Rejestr zagrożeń i niebezpiecznych zdarzeń na terenie firmy ACME
 ## Założenia
 A. Strona główna:
 <br>- prezentacja idei zgłaszania zagrożeń i niebezpiecznych zdarzeń.
