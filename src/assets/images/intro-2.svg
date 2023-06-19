@@ -24,8 +24,8 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="0.10141667"
-     inkscape:cx="9224.3221"
-     inkscape:cy="4358.258"
+     inkscape:cx="8366.4747"
+     inkscape:cy="4358.2579"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -42,14 +42,15 @@
      fill-rule="evenodd"
      stroke-width="28.222"
      stroke-linejoin="round"
-     id="path19013" />
+     id="path19013"
+     style="fill:#cfebf8;fill-opacity:0.32871974" />
   <path
      d="M 7333.2484,7195.4328 C 6202.8276,6450.68 6047.8564,6440.4521 5029.9201,6904.7451 3927.1852,7407.7089 3268.5571,6947.0899 3191.4199,6157.3007 3060.0424,4812.0624 5219.7168,5245.4025 4995.0084,3529.4498 4829.4154,2265.2273 5423.1821,1704.5767 6221.9812,1569.5482 c 790.3542,-133.5885 1896.6589,123.1857 1835.0185,1322.4476 -34.0412,663.3804 -742.9924,1201.2402 -101.0796,1509.7864 664.0262,319.0366 1684.3132,213.6152 1889.6068,1480.711 203.4651,1255.7912 -1455.5127,2009.3319 -2512.2785,1312.9396"
-     style="fill:#e5f2f8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8.83803"
+     style="fill:#cfebf8;fill-opacity:0.32871974;fill-rule:nonzero;stroke:none;stroke-width:8.83803"
      id="path800" />
   <path
      d="m 8634.6603,2973.9133 c 359.3069,-198.5492 790.4411,-90.7054 962.9994,240.894 172.6451,331.5993 21.243,761.4404 -338.0645,959.9828 -359.3069,198.5492 -1015.237,256.1484 -1187.8821,-75.451 -172.5576,-331.5118 203.6396,-926.7892 562.9472,-1125.4258"
-     style="fill:#e7f4fa;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8.83803"
+     style="fill:#cfebf8;fill-opacity:0.32871974;fill-rule:nonzero;stroke:none;stroke-width:8.83803"
      id="path802" />
   <path
      d="m 6495.1836,3350.4615 h -204.6837 v -942.8511 h 204.6837 v 942.8511"
