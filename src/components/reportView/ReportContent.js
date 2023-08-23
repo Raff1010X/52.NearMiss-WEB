@@ -28,6 +28,7 @@ import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline'
 import PhotoSizeSelectActualOutlinedIcon from '@mui/icons-material/PhotoSizeSelectActualOutlined'
 import { setNewFile, setReport } from '../../features/report/reportSlice'
 import { selectUser } from '../../features/login/loginSlice'
+import { selectOnlineStatus } from '../../api/otherSlice'
 
 const ReportContent = ({ reports }) => {
     const dispatch = useDispatch()
@@ -41,23 +42,20 @@ const ReportContent = ({ reports }) => {
     const r = reports[index]
     const navigate = useNavigate()
 
+    const online = useSelector(selectOnlineStatus)
+
     useEffect(() => {
-        let stop = false
         setLoading(true)
         const img = imageRef.current
-        const source = process.env.PUBLIC_URL + '/upload/images/' + r['Zdjęcie'] // const image = new URL('/upload/images/' + r['Zdjęcie'], 'http://localhost:3001')
+        let source = process.env.PUBLIC_URL + '/upload/images/' + r['Zdjęcie'] // const image = new URL('/upload/images/' + r['Zdjęcie'], 'http://localhost:3001')
         if (r['Zdjęcie'] && img !== null) {
             img.onload = function () {
                 setLoading(false)
             }
-            img.onerror = function () {
-                if (!stop) img.src = process.env.PUBLIC_URL + '/upload/images/trex.png'
-                stop = true
-            }
             img.src = source
         }
 
-        dispatch(getCommentsAsync(r['Numer zgłoszenia']))
+        if (online) dispatch(getCommentsAsync(r['Numer zgłoszenia']))
         dispatch(setReportId(r['Numer zgłoszenia']))
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -95,6 +93,7 @@ const ReportContent = ({ reports }) => {
         return true
     }
     const handleClickDelete = () => {
+        if (!online) return
         if (!isAutor()) return
         dispatch(
             sendQuestion({
@@ -113,10 +112,12 @@ const ReportContent = ({ reports }) => {
     }
 
     const handleClickComments = () => {
-        navigate('/comments')
+        if (!online) return
+        else navigate('/comments')
     }
 
     const handleClickEdit = () => {
+        if (!online) return
         if (!isAutor()) return
         dispatch(setReport(r))
         dispatch(setNewFile(false))
@@ -229,24 +230,30 @@ const ReportContent = ({ reports }) => {
                             </i>
                         )}
                     </div>
-                    <div className="report-view__bottom-delete" onClick={handleClickDelete}>
+                    <div className="report-view__bottom-delete" onClick={handleClickDelete}
+                        style={!online ? { filter: 'grayscale(100%)' } : {}}
+                    >
                         <i>
                             <RemoveCircleOutlineIcon />
                             Usuń
                         </i>
                     </div>
-                    <div className="report-view__bottom-edit" onClick={handleClickEdit}>
+                    <div className="report-view__bottom-edit" onClick={handleClickEdit}
+                        style={!online ? { filter: 'grayscale(100%)' } : {}}
+                    >
                         <i>
                             <ModeEditOutlineOutlinedIcon />
                             Edytuj
                         </i>
                     </div>
-                    <div className="report-view__bottom-comment" onClick={handleClickComments}>
+                    <div className="report-view__bottom-comment" onClick={handleClickComments}
+                        style={!online ? { filter: 'grayscale(100%)' } : {}}
+                    >
                         <i>
                             <MapsUgcOutlinedIcon />
                             Komentuj
                         </i>
-                        <p>{comments.length}</p>
+                        {online && <p>{comments.length}</p>}
                     </div>
                 </div>
             </div>

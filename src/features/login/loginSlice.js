@@ -56,6 +56,13 @@ export const loginSlice = createSlice({
                 state.user.role = ''
                 state.user.department = ''
             })
+            .addCase(userLogOutAsync.rejected, (state) => {
+                state.status = 'idle'
+                state.userIsLogged = false
+                state.user.email = ''
+                state.user.role = ''
+                state.user.department = ''
+            })
             .addCase(userSignInAsync.pending, (state) => {
                 state.status = 'loading'
             })

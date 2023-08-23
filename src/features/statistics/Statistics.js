@@ -18,6 +18,7 @@ import {
     fetchReportsByDepartmentAsync,
     fetchTop10Async,
 } from './statisticsApi'
+import { selectOnlineStatus } from '../../api/otherSlice'
 import useAppScroll from '../../hooks/useAppScroll'
 import useNavigateMain from '../../hooks/useNavigateMain'
 import { touchMoves, touchEnds } from '../../misc/touch'
@@ -50,6 +51,7 @@ const Statistics = () => {
     const rangeValues = useSelector(selectRangeValues)
     const [value, setValue] = useState([0, 0])
     const [touchStart, setTouchStart] = useState(0)
+    const online = useSelector(selectOnlineStatus)
 
     const reportsByDate = useMemo(
         () =>
@@ -200,6 +202,7 @@ const Statistics = () => {
                 onTouchEnd={(e) => handleMouseUp(e)}
                 onChange={handleChange}
                 valueLabelDisplay={'off'}
+                disabled={!online}
             />
             <div className="report-view__footer">
                 <div className={classPrev} onClick={handlePrevClick}>

@@ -2,9 +2,12 @@
 
 Demo: https://zpw.webdev.priv.pl/
 
-To login use: 
+
+Przy logowaniu należy użyć danych: 
 - email: rafal.anonim@acme.pl
 - password: test123456
+Użytkownik spoza domeny @acme.pl może tylko zgłaszać zagrożenia i niebezpieczne zdarzenia.
+
 
 My git repo: https://github.com/Raff1010X/01.Roadmap
 
@@ -18,7 +21,9 @@ B. Strona logowania:
 <br>- logowanie do aplikacji, 
 <br>- odzyskiwanie hasła przez użytkownika, 
 <br>- logowanie z wykorzystaniem tokenów JWT i CRSF,
-<br>- różne role/uprawnienia użytkowników.
+<br>- różne role/uprawnienia użytkowników:
+<br> -- użytkownik wewnętrzny z domeny @acme.pl z dostępem do wszystkich funkcjonalności aplikacji,
+<br> -- użytkownik zewnętrzny z innej domeny niż @acme.pl może tylko zgłaszać zagrożenia i niebezpieczne zdarzenia,
 
 C. Strona formularza zgłoszenia:
 <br>- zbieranie danych o zagrożeniu/zdarzeniu niebezpiecznym, 
@@ -44,6 +49,19 @@ F. Strona statystyk:
 G. Strona użytkownika:
 <br>- prezentacja danych użytkownika,
 <br>- zmiana danych użytkownika.
+
+H. PWA:
+<br>- aplikacja powinna działać w trybie offline,
+<br>- aplikacja powinna być instalowalna na urządzeniach,
+<br>- wsparcie dla zgłaszania zagrożeń i niebezpiecznych zdarzeń,
+<br>- wsparcie dla zgłaszania wykonania działań zapobiegających zagrożeniom.
+
+I. RWD:
+<br>- aplikacja powinna być responsywna,
+<br>- aplikacja powinna działać na urządzeniach mobilnych.
+
+J. Przeglądarki:
+<br>- aplikacja powinna działać w przeglądarkach: Chrome, Firefox, Edge.
 
 ## Technologie
 Frontend: JS, CSS, React, Redux, Redux-Thunk.

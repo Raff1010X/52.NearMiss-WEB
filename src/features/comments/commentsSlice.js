@@ -33,6 +33,7 @@ export const commentsSlice = createSlice({
             })
             .addCase(getCommentsAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 action.asyncDispatch(sendMessage('Błąd serwera...'))
             })
 
@@ -51,6 +52,7 @@ export const commentsSlice = createSlice({
             })
             .addCase(deleteCommentsAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 action.asyncDispatch(sendMessage('Błąd serwera...'))
             })
 
@@ -69,6 +71,7 @@ export const commentsSlice = createSlice({
             })
             .addCase(patchCommentsAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 action.asyncDispatch(sendMessage('Błąd serwera...'))
             })
 
@@ -87,6 +90,7 @@ export const commentsSlice = createSlice({
             })
             .addCase(postCommentsAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 action.asyncDispatch(sendMessage('Błąd serwera...'))
             })
     },

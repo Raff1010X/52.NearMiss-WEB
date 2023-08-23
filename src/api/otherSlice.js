@@ -2,16 +2,23 @@ import { createSlice } from '@reduxjs/toolkit'
 import { sendMessage } from '../features/message/messageSlice'
 import { getConsequencesAsync, getDepartmentsAsync, getThreatsAsync } from './otherAPI'
 
+
 const initialState = {
     status: 'idle',
     consequences: [],
     departments: [],
     threats: [],
+    onlineStatus: true,
 }
 
 export const otherSlice = createSlice({
     name: 'other',
     initialState,
+    reducers: {
+        setOnlineStatus: (state, action) => {
+            state.onlineStatus = action.payload
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(getConsequencesAsync.pending, (state) => {
@@ -28,6 +35,7 @@ export const otherSlice = createSlice({
             })
             .addCase(getConsequencesAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 action.asyncDispatch(sendMessage('Błąd serwera...'))
             })
 
@@ -45,6 +53,7 @@ export const otherSlice = createSlice({
             })
             .addCase(getDepartmentsAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 action.asyncDispatch(sendMessage('Błąd serwera...'))
             })
 
@@ -62,11 +71,14 @@ export const otherSlice = createSlice({
             })
             .addCase(getThreatsAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 action.asyncDispatch(sendMessage('Błąd serwera...'))
             })
     },
 })
 
+export const { setOnlineStatus } = otherSlice.actions
+export const selectOnlineStatus = (state) => state.other.onlineStatus
 export const selectConsequences = (state) => state.other.consequences
 export const selectDepartments = (state) => state.other.departments
 export const selectThreats = (state) => state.other.threats

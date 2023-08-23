@@ -8,6 +8,7 @@ import { postCommentsAsync, patchCommentsAsync } from './commentsAPI'
 import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
 import { is } from '../../misc/validate'
+import { selectOnlineStatus } from '../../api/otherSlice'
 
 import useAppScroll from '../../hooks/useAppScroll'
 import useScroll from '../../hooks/useScroll'
@@ -36,6 +37,7 @@ const Comments = () => {
     const [commentsRender, setCommentsRender] = useState(-1)
     const [commentValue, setCommentValue] = useState()
     const refcommentInput = useRef(null)
+    const online = useSelector(selectOnlineStatus)
 
     const checkValidyty = () => {
         return is.notLess(refcommentInput)
@@ -183,17 +185,32 @@ const Comments = () => {
                         )}
                     </div>
 
-                    <div className="report-view__top-edge" onClick={handleClickAdd}>
-                        <i className="report-view__top-icon--animated">
-                            <MapsUgcOutlinedIcon />
-                        </i>
-
-                        <div className="report-view__top-edge--date">
-                            Dodaj
-                            <br />
-                            komentarz
+                    {!online ? (
+                        <div className="report-view__top-edge">
+                            <i className="report-view__top-icon">
+                                <MapsUgcOutlinedIcon />
+                            </i>
+                            
+                            <div className="report-view__top-edge--date">
+                                Brak połączenia
+                                <br />
+                                z serwerem
+                            </div>
                         </div>
-                    </div>
+                    ) : (
+                        <div className="report-view__top-edge" onClick={handleClickAdd}>
+                            <i className="report-view__top-icon--animated">
+                                <MapsUgcOutlinedIcon />
+                            </i>
+
+                            <div className="report-view__top-edge--date">
+                                Dodaj
+                                <br />
+                                komentarz
+                            </div>
+                        </div>
+                    )}
+
                     {/* comment form */}
                     <div id="comments__add-edit" className="comments__add-edit--hidden">
                         <div className="comments__head">{selected === -1 ? 'Nowy komentarz' : 'Edytuj komentarz'}</div>

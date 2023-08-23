@@ -4,11 +4,14 @@ import { sendMessage } from './../message/messageSlice'
 
 import { searchAsync, executedAsync, deleteAsync } from './registerAPI'
 
+
 const initialState = {
     status: 'idle',
     reports: '',
+    pageFallback: 1,
     page: 1,
     pages: 0,
+    indexFallback: 0,
     index: 0,
     numberOfReports: 0,
     searchString: '?limit=10&offset=0&order=Numer zgłoszenia&desc=true',
@@ -30,6 +33,7 @@ export const registerSlice = createSlice({
     initialState,
     reducers: {
         setSelectedPage: (state, action) => {
+            state.pageFallback = state.page
             state.page = action.payload
         },
         setSearchString: (state, action) => {
@@ -42,15 +46,19 @@ export const registerSlice = createSlice({
             state.descending = action.payload
         },
         setIndex: (state, action) => {
+            state.indexFallback = state.index
             state.index = action.payload
         },
         nextIndex: (state) => {
             if ((state.page - 1) * 10 + state.index + 2 > state.numberOfReports) {
                 return
             } else if (state.index < 9) {
+                state.indexFallback = state.index
                 state.index = state.index + 1
             } else if (state.page < state.pages) {
+                state.indexFallback = state.index
                 state.index = 0
+                state.pageFallback = state.page
                 state.page = state.page + 1
                 state.noData = true
                 state.pages = 0
@@ -61,9 +69,12 @@ export const registerSlice = createSlice({
             if ((state.page - 1) * 10 + state.index - 1 < 0) {
                 return
             } else if (state.index > 0) {
+                state.indexFallback = state.index
                 state.index = state.index - 1
             } else if (state.page > 0) {
+                state.indexFallback = state.index
                 state.index = 9
+                state.pageFallback = state.page
                 state.page = state.page - 1
                 state.noData = true
                 state.pages = 0
@@ -124,7 +135,11 @@ export const registerSlice = createSlice({
             })
             .addCase(searchAsync.rejected, (state, action) => {
                 state.status = 'failed'
-                // action.asyncDispatch(sendMessage("Błąd serwera..."))
+                state.page = state.pageFallback
+                state.index = state.indexFallback
+                if (state.index === 0 ) state.noData = true
+                else state.noData = false
+                action.asyncDispatch(sendMessage("Błąd serwera..."))
             })
 
             .addCase(executedAsync.pending, (state) => {
@@ -136,6 +151,10 @@ export const registerSlice = createSlice({
                 if (action.payload.status === 'error') {
                     action.asyncDispatch(sendMessage(action.payload.message))
                 } else {
+                    if (action.payload.status === 'saved') {
+                        action.asyncDispatch(sendMessage('Zgłoszenie zapisano do pamięci podręcznej, przy ponownym połączeniu z serwerem zostanie wysłane do zarejestrowania jako wykonane'))
+                        action.asyncDispatch(setUpdate())
+                    } else                    
                     if (action.payload.data[0].x_report_executed === true) {
                         action.asyncDispatch(sendMessage('Zgłoszenie zarejestrowano jako wykonane'))
                         action.asyncDispatch(setUpdate())
@@ -165,6 +184,7 @@ export const registerSlice = createSlice({
             })
             .addCase(deleteAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 action.asyncDispatch(sendMessage('Błąd serwera...'))
             })
     },

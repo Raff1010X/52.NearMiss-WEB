@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import { useEffect, useState } from 'react'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { FullScreen, useFullScreenHandle } from 'react-full-screen'
 
 import { selectUserIsLogged, selectUser } from '../features/login/loginSlice'
@@ -21,17 +21,22 @@ import Statistics from '../features/statistics/Statistics'
 import User from '../features/user/User'
 import Comments from '../features/comments/Comments'
 import ChangeUserData from '../features/user/ChangeUserData'
+import useServiceWorkerMessage from '../hooks/useServiceWorkerMessage'
+import useBackgroundSync from '../hooks/useBackgroundSync'
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 
 import './App.css'
 
 function App() {
+    useServiceWorkerMessage()
+    useBackgroundSync()
     const fullScreen = useFullScreenHandle()
     const [fetched, setFetched] = useState(false)
     const userIsLogged = useSelector(selectUserIsLogged)
     const user = useSelector(selectUser)
     const { role } = user
+    const dispatch = useDispatch()
 
     useEffect(() => {
         async function fetchCrsf() {
@@ -40,10 +45,10 @@ function App() {
                 const el = ReactDOM.findDOMNode(document.querySelector('#loader'))
                 if (el) el.remove()
                 setFetched(true)
-            }
+            } 
         }
         fetchCrsf()
-    }, [])
+    }, [dispatch])
 
     let style = {}
     if (!userIsLogged || role === 'Użytkownik') {

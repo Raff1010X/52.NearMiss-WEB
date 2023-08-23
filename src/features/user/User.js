@@ -7,6 +7,7 @@ import useNavigateMain from '../../hooks/useNavigateMain'
 
 import { selectUser } from '../login/loginSlice'
 import { fetchNumberOfUserReports } from '../../api/fetch'
+import { selectOnlineStatus } from '../../api/otherSlice'
 
 import Button from '../../components/button/Button'
 import './user.css'
@@ -16,17 +17,20 @@ const User = () => {
     useAppScroll()
     const [numberOfReports, setNumberOfRecords] = useState('Liczę...')
     const user = useSelector(selectUser)
-    const { email, department, role } = user
-
+    // const { email, department, role } = user
+    const { email, department } = user
+    const online = useSelector(selectOnlineStatus)
     const navigate = useNavigate()
 
     useEffect(() => {
         async function fetchDep() {
-            const data = await fetchNumberOfUserReports()
-            setNumberOfRecords(data.data[0].x_user_number_of_reports)
+            try {
+                const data = await fetchNumberOfUserReports()
+                setNumberOfRecords(data.data[0].x_user_number_of_reports)
+            } catch (err) { }
         }
-        fetchDep()
-    }, [])
+        if (online) fetchDep()
+    }, [online])
 
     const handleClick = () => {
         navigate('/changeUserData')
@@ -44,7 +48,7 @@ const User = () => {
                 Zmień moje dane
             </Button>
             {/* TODO */}
-            {role === 'Administrator' && <Button className="button user__button">Panel administratora</Button>}
+            {/* {role === 'Administrator' && <Button className="button user__button">Panel administratora</Button>} */}
         </div>
     )
 }

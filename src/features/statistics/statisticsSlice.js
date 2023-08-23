@@ -7,6 +7,7 @@ import {
     fetchReportsByDepartmentAsync,
     fetchTop10Async,
 } from './statisticsApi'
+
 // import { sendMessage } from '../message/messageSlice'
 
 const initialState = {
@@ -50,6 +51,7 @@ export const statisticsSlice = createSlice({
             })
             .addCase(fetchReportsDoneAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 // action.asyncDispatch(sendMessage(action.error.message))
             })
             // ---------- reports post
@@ -69,6 +71,7 @@ export const statisticsSlice = createSlice({
             })
             .addCase(fetchReportsPostAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 // action.asyncDispatch(sendMessage(action.error.message))
             })
             // ---------- reposts stats
@@ -92,6 +95,7 @@ export const statisticsSlice = createSlice({
             })
             .addCase(fetchStatsAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 // action.asyncDispatch(sendMessage(action.error.message))
             })
             // ---------- reposts to deprtment
@@ -109,6 +113,7 @@ export const statisticsSlice = createSlice({
             })
             .addCase(fetchReportsToDepartmentAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 // action.asyncDispatch(sendMessage(action.error.message))
             })
             // ---------- reposts by deprtment
@@ -128,6 +133,7 @@ export const statisticsSlice = createSlice({
             })
             .addCase(fetchReportsByDepartmentAsync.rejected, (state, action) => {
                 state.status = 'failed'
+                
                 // action.asyncDispatch(sendMessage(action.error.message))
             })
             // ---------- top 10 users
@@ -145,7 +151,7 @@ export const statisticsSlice = createSlice({
             })
             .addCase(fetchTop10Async.rejected, (state, action) => {
                 state.status = 'failed'
-                console.log('X')
+                
                 // action.asyncDispatch(sendMessage(action.error.message))
             })
     },

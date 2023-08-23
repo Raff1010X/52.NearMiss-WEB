@@ -66,6 +66,18 @@ export const reportSlice = createSlice({
             })
             .addCase(reportPostAsync.fulfilled, (state, action) => {
                 state.status = 'idle'
+                if (action.payload.status === 'saved') {
+                    state.message = 'ok'
+                    action.asyncDispatch(sendMessage('Zgłoszenie zapisano do pamięci podręcznej, przy ponownym połączeniu z serwerem zostanie wysłane do zarejestrowania w bazie danych'))
+                    if (state.report['Zdjęcie']) {
+                        action.asyncDispatch(
+                            filePostAsync({
+                                name: state.report['Zdjęcie'],
+                                data: state.uri,
+                            })
+                        )
+                    }
+                }
                 if (action.payload.status === 'success') {
                     state.number = action.payload.data[0].x_report_create
                     if (state.report['Zdjęcie']) {
@@ -124,6 +136,9 @@ export const reportSlice = createSlice({
             })
             .addCase(filePostAsync.fulfilled, (state, action) => {
                 state.status = 'idle'
+                if (action.payload.status === 'saved') {
+                    state.message = 'ok'
+                }
                 if (action.payload.status === 'success') {
                     state.message = 'ok'
                     reportPosted(action, state)
@@ -132,7 +147,7 @@ export const reportSlice = createSlice({
                     reportPosted(
                         action,
                         state,
-                        'Niestety plik ze zdjęciem sie został zapisany. Spróbój dodać go na karcie zgłoszenia w rejestrze.'
+                        'Niestety plik ze zdjęciem sie został przesłany.'
                     )
                 }
             })
@@ -153,6 +168,7 @@ export const selectNewFile = (state) => state.report.newFile
 
 export const postNewReport = () => (dispatch, getState) => {
     const report = selectReport(getState())
+
     dispatch(reportPostAsync(report))
 }
 

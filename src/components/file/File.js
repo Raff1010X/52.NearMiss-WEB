@@ -61,14 +61,9 @@ const File = () => {
         if (fileName) {
             setStyle('file__label file__label--bottom')
             if (!newFile) {
-                let stop = false
                 const img = imageRef.current
                 const source = process.env.PUBLIC_URL + '/upload/images/' + fileName
                 if (fileName && img !== null) {
-                    img.onerror = function () {
-                        if (!stop) img.src = process.env.PUBLIC_URL + '/upload/images/trex.png'
-                        stop = true
-                    }
                     img.src = source
                 }
             }

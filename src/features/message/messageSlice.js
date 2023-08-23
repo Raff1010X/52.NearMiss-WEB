@@ -10,7 +10,10 @@ export const messageSlice = createSlice({
     initialState,
     reducers: {
         sendMessage: (state, action) => {
-            state.message = action.payload
+            if (action.payload.indexOf('Failed to fetch') !== -1)
+                state.message = 'Błąd połączenia z serwerem.'
+            else
+                state.message = action.payload
             state.function = ''
         },
         sendQuestion: (state, action) => {
