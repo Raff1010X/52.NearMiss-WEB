@@ -83,10 +83,9 @@ function cacheFirstThenFetch(event, cacheName, requestUrlArray, notToRequestUrlA
                         .then((response) => {
                             if (response.ok) {
                                 cache.put(event.request, response.clone())
-                                // postMessageToClient(SERVER_ONLINE)
+                                postMessageToClient(SERVER_ONLINE)
                                 return response
                             } else {
-                                postMessageToClient(SERVER_OFFLINE)
                                 if (requestReplacer)
                                     return caches.match(requestReplacer)
                                 return caches.match(event.request).then((response) => {
@@ -127,7 +126,6 @@ function fetchFirstThenCache(event, cacheName, requestUrlArray, notToRequestUrlA
                             postMessageToClient(SERVER_ONLINE)
                             return response
                         } else {
-                            // postMessageToClient(SERVER_OFFLINE)
                             if (requestReplacer)
                                 return caches.match(requestReplacer)
                             if (response.status === 500)
