@@ -6,6 +6,7 @@ Demo: https://zpw.webdev.priv.pl/
 Przy logowaniu należy użyć danych: 
 - email: rafal.anonim@acme.pl
 - password: test123456
+
 Użytkownik spoza domeny @acme.pl może tylko zgłaszać zagrożenia i niebezpieczne zdarzenia.
 
 
